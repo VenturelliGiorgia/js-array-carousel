@@ -1,0 +1,24 @@
+img {
+    width: 500px;
+}
+
+.mt-10 {
+    margin-top: 10rem;
+}
+
+#slider-btn {
+    background-color: lightgray;
+    border-radius: 50%;
+}
+
+.btn-position-next {
+    position: absolute;
+    bottom: 0px;
+    left: 530px;
+}
+
+.btn-position-prev {
+    position: absolute;
+    top: 0px;
+    left: 530px;
+}
