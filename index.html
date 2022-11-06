@@ -12,16 +12,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="slider-container mt-10 text-center position-relative">
-            <img class="slider-img d-none" src="img/01.webp">
-            <img class="slider-img d-none" src="img/02.webp">
-            <img class="slider-img d-none" src="img/03.webp">
-            <img class="slider-img" src="img/04.webp">
-            <img class="slider-img d-none" src="img/05.webp">
-
-            <button class="btn btn-outline-secondary btn-position-prev" id="slider-btn"><i class="fa-solid fa-chevron-down"></i></button>
-            <button class="btn btn-outline-secondary btn-position-next" id="slider-btn"><i class="fa-solid fa-chevron-up"></i></button>
+    <div class="container mt-10"> 
+        <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-position-next slider-btn" id="slider-btn-next"><i class="fa-solid fa-chevron-down"></i></button>
+            <div class="slider-container text-center position-relative"></div>
+            <button class="btn btn-outline-secondary btn-position-prev slider-btn" id="slider-btn-prev"><i class="fa-solid fa-chevron-up"></i></button>
         </div>
     </div>
     <script src="js/main.js"></script>
