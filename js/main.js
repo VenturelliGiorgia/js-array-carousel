@@ -12,12 +12,11 @@ const sliderContainerEl = document.querySelector(".slider-container");
 for (let i = 0; i < images.length; i++) {
 
 
-    sliderContainerEl.innerHTML += `<img src="${images[i]}" class="slider-img position-img no-active">`;
+    sliderContainerEl.innerHTML += `<img src="${images[i]}" class="slider-img position-img">`;
     const sliderImgEl = document.querySelector(".slider-img");
 
     if (i === 0) {
-        sliderImgEl.classList.remove("no-active");
-        sliderImgEl.classList.add("active");
+        sliderImgEl.classList.add("d-block");
     }
 }
 
@@ -30,8 +29,7 @@ btnNext.addEventListener("click", function () {
 
     // prendo immagine corrente e la nascondo così da poter aggiornare il contatore e visualizzare la prossima immagine
     const oldImg = document.querySelector(`.slider-container :nth-child(${currentImgIndex + 1})`);
-    oldImg.classList.remove("no-active");
-    oldImg.classList.add("active");
+    oldImg.classList.add("d-block");
 
 
     // incrementato il contatore
@@ -45,17 +43,15 @@ btnNext.addEventListener("click", function () {
     }
 
     // aggiorno l'immagine
-    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img active">`;
+
+    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img d-block">`;
 
 });
-
 btnPrev.addEventListener("click", function () {
     console.log("Prev btn click");
     // prendo immagine corrente e la nascondo così da poter aggiornare il contatore e visualizzare l'immagine precedente
     const oldImg = document.querySelector(`.slider-container :nth-child(${currentImgIndex + 1})`);
-    oldImg.classList.remove("no-active");
-    oldImg.classList.add("active");
-
+    oldImg.classList.remove("d-block");
     // decremento il contatore
     currentImgIndex--;
 
@@ -65,6 +61,7 @@ btnPrev.addEventListener("click", function () {
     }
 
     // aggiorno l'immagine
-    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img active">`;
+    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img d-block">`;
+    sliderContainerEl.classList.remove("d-block");
 
 });
