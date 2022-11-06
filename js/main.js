@@ -30,8 +30,9 @@ btnNext.addEventListener("click", function () {
 
     // prendo immagine corrente e la nascondo così da poter aggiornare il contatore e visualizzare la prossima immagine
     const oldImg = document.querySelector(`.slider-container :nth-child(${currentImgIndex + 1})`);
-    oldImg.classList.remove("active");
-    oldImg.classList.add("no-active");
+    oldImg.classList.remove("no-active");
+    oldImg.classList.add("active");
+
 
     // incrementato il contatore
     currentImgIndex++;
@@ -50,18 +51,15 @@ btnNext.addEventListener("click", function () {
 
 btnPrev.addEventListener("click", function () {
     console.log("Prev btn click");
-
     // prendo immagine corrente e la nascondo così da poter aggiornare il contatore e visualizzare l'immagine precedente
     const oldImg = document.querySelector(`.slider-container :nth-child(${currentImgIndex + 1})`);
-    oldImg.classList.remove("active");
-    oldImg.classList.add("no-active");
+    oldImg.classList.remove("no-active");
+    oldImg.classList.add("active");
 
     // decremento il contatore
     currentImgIndex--;
 
-    const ultimoIndiceDisponibile = images.length - 1;
-
-    //se l'utente proverà ad andare prima della prima immagine andra  
+    //se l'utente proverà ad andare prima della prima immagine non andrà in negativo
     if (currentImgIndex < 0) {
         currentImgIndex = 0;
     }

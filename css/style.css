@@ -14,14 +14,14 @@ img {
 .btn-position-next {
     position: absolute;
     bottom: -100vh;
-    left: 530px;
+    left: 565px;
     z-index: 10;
 }
 
 .btn-position-prev {
     position: absolute;
     top: 0px;
-    left: 530px;
+    left: 565px;
     z-index: 10;
 }
 
