@@ -16,7 +16,7 @@ for (let i = 0; i < images.length; i++) {
     const sliderImgEl = document.querySelector(".slider-img");
 
     if (i === 0) {
-        sliderImgEl.classList.add("d-block");
+        sliderImgEl.classList.add("active");
     }
 }
 
@@ -29,7 +29,7 @@ btnNext.addEventListener("click", function () {
 
     // prendo immagine corrente e la nascondo così da poter aggiornare il contatore e visualizzare la prossima immagine
     const oldImg = document.querySelector(`.slider-container :nth-child(${currentImgIndex + 1})`);
-    oldImg.classList.add("d-block");
+    oldImg.classList.add("active");
 
 
     // incrementato il contatore
@@ -44,14 +44,14 @@ btnNext.addEventListener("click", function () {
 
     // aggiorno l'immagine
 
-    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img d-block">`;
+    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img active">`;
 
 });
 btnPrev.addEventListener("click", function () {
     console.log("Prev btn click");
     // prendo immagine corrente e la nascondo così da poter aggiornare il contatore e visualizzare l'immagine precedente
     const oldImg = document.querySelector(`.slider-container :nth-child(${currentImgIndex + 1})`);
-    oldImg.classList.remove("d-block");
+    oldImg.classList.remove("active");
     // decremento il contatore
     currentImgIndex--;
 
@@ -61,7 +61,8 @@ btnPrev.addEventListener("click", function () {
     }
 
     // aggiorno l'immagine
-    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img d-block">`;
-    sliderContainerEl.classList.remove("d-block");
+    sliderContainerEl.innerHTML += `<img src="${images[currentImgIndex]}" class="slider-img position-img active
+    ">`;
+    sliderContainerEl.classList.remove("active");
 
 });
